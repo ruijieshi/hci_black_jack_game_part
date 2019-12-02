@@ -93,17 +93,17 @@ function refresh() {
 	}
 	$("#bet").html("Bet："+ bet_sore);
 	if(bet_sore) {
-		options="<a href='#' id='game'>Confirm </a><img onClick='note(2)' class='question' src='picture/desk/question.png'/>";
+		options="<a href='#' id='game' class='custom_button'>Confirm</a><img onClick='note(2)' class='question' src='picture/desk/question.png'/>";
 	}
 	else {
 		options="<br/>Confirm <img onClick='note(2)' class='question' src='picture/desk/question.png'/>";
 	}
 	if(y_sore-bet_sore>5)
-		options+="<br/><a href='#' id='all_in'>All In </a><img onClick='note(3)' class='question' src='picture/desk/question.png'/>";
+		options+="<br/><a href='#' id='all_in' class='custom_button'>  All In  </a><img onClick='note(3)' class='question' src='picture/desk/question.png'/>";
 	else
 		options+="<br/>All In <img onClick='note(3)' class='question' src='picture/desk/question.png'/>";
 	if(bet_sore)
-		options+="<br/><a href='#' id='reset'>Reset </a><img onClick='note(4)' class='question' src='picture/desk/question.png'/>";
+		options+="<br/><a href='#' id='reset' class='custom_button'>  Reset  </a><img onClick='note(4)' class='question' src='picture/desk/question.png'/>";
 	else
 		options+="<br/>Reset <img onClick='note(4)' class='question' src='picture/desk/question.png'/>";
 	$("#choose").html(options);
@@ -151,14 +151,14 @@ function choosemenu()
 {
 	document.getElementById("box").innerHTML="";
 $("#message").text("Please take an action");
-var options="<a href='#' id='hit'>Hit </a<img onClick='note(5)' class='question' src='picture/desk/question.png'/>";
+var options="<a href='#' id='hit' class='custom_button'>     Hit     </a><img onClick='note(5)' class='question' src='picture/desk/question.png'/>";
 if(y_sore>2*bet_sore)
-options+="<br/><a href='#' id='double'>Double </a><img onClick='note(5)' class='question' src='picture/desk/question.png'/>";
+options+="<br/><a href='#' id='double' class='custom_button'>  Double  </a><img onClick='note(5)' class='question' src='picture/desk/question.png'/>";
 else
 options+="<br/>Double <img onClick='note(6)' class='question' src='picture/desk/question.png'/>";
-options+="<br/><a href='#' id='stand'>Stand </a><img onClick='note(7)' class='question' src='picture/desk/question.png'/>";
+options+="<br/><a href='#' id='stand' class='custom_button'>   Stand   </a><img onClick='note(7)' class='question' src='picture/desk/question.png'/>";
 if(card[1].value!=1&&y_num==2)
-options+="<br/><a href='#' id='surrender'>Surrender </a><img onClick='note(8)' class='question' src='picture/desk/question.png'/>"
+options+="<br/><a href='#' id='surrender' class='custom_button'>Surrender</a><img onClick='note(8)' class='question' src='picture/desk/question.png'/>"
 else
 options+="<br/>Surrender <img onClick='note(8)' class='question' src='picture/desk/question.png'/>"
 $("#choose").html(options).show();
@@ -241,16 +241,16 @@ function surrender()
 y_sore-=bet_sore/2;
 $("#sore").text("Money："+y_sore);
 $("#center_message").html("<img class='result' src='picture/desk/emotion8.png'>You have surrended！").hide().fadeIn(500,function(){
-if(y_sore<10)//游戏结束判断
+if(y_sore<10)//Check if game is over
 {
 $("#message").text("Sorry, you do not have enough money！");
 $("#choose").text("Game Over！");
 window.setTimeout(function(){$('.show,#center_message,#right_top,#choose,#cards').fadeOut(1200,function(){location.reload()})},5000);//游戏结束后，先淡出再刷新
 }
-else//单局结束
+else//single game over
 {
 $("#message").text("Game Over，click\"Continue\"to start a new game");
-$("#choose").html("<a href='#' id='reset'>Continue <img onClick='note(10)' class='question' src='picture/desk/question.png'/>").hide().fadeIn(500);
+$("#choose").html("<a href='#' id='reset' class='custom_button'>Continue <img onClick='note(10)' class='question' src='picture/desk/question.png'/>").hide().fadeIn(500);
 $("#reset").click(bet);
 }
 });
@@ -324,19 +324,19 @@ get_sore=0;
 y_sore+=get_sore;
 $("#center_message").html(message).hide().fadeIn(500,function(){;
 $("#sore").text("Moeny："+y_sore);
-if(y_sore<10)//游戏结束判断
+if(y_sore<10)//Check if game is over
 {
 $("#message").text("Sorry, you do not have enough moeny！");
 $("#choose").text("Game over！");
 window.setTimeout(function(){$('.show,#center_message,#right_top,#choose,#cards').fadeOut(1200,function(){location.reload()})},5000);//游戏结束后，先淡出再刷新
 }
-else//单局结束
+else//Single game is over
 {
 $("#message").text("Game Over，Click\"Continue\"to start a new game");
-$("#choose").html("<a href='#' id='reset'>Continue </a><img onClick='note(10)' class='question' src='picture/desk/question.png'/>").hide().fadeIn(500);
+$("#choose").html("<a href='#' id='reset' class='custom_button'>Continue </a><img onClick='note(10)' class='question' src='picture/desk/question.png'/>").hide().fadeIn(500);
 $("#reset").click(bet);
 }
-});//慢慢浮现结果信息
+});//Shows the result info
 }
 
 
@@ -362,7 +362,7 @@ $("#center_message").fadeOut(500,function(){
 			c_sum=par[0];
 			c_A=par[1];
 			deal(c_x,c_y,c_num,function(){
-				card[0].showcard(c_x,c_y,c_num++,"c_show");//电脑发出的第二张牌为暗牌
+				card[0].showcard(c_x,c_y,c_num++,"c_show");
 				deal(y_x,y_y,y_num,function(){
 					card[num].showcard(y_x,y_y,y_num++,"y_show");
 					par=cardsum(y_sum,card[num++].value,y_A);
@@ -406,8 +406,8 @@ $("#center_message").fadeOut(500,function(){
 			});
 		});
 	},
-	5200);//纸牌牌堆显现，留5200毫秒等待洗牌操作完成
+	5200);
 	shuffe();
 	}
-	);//加注选项淡出后洗牌
+	);
 }

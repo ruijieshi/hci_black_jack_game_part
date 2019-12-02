@@ -36,4 +36,84 @@ body{background-image:url(../picture/desk/bg.jpg);text-align:center;}
 #choose a:link,#choose a:visited{color:#000000;}
 #choose a:hover{color:#0000CC;}
 #choose a:active{color:#333333;}
+.btn-group .button {
+    background-color: #008CBA; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+    display: block;
+    border-radius:28px;
+}
 
+.btn-group .button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+.btn-group .button:hover {
+    background-color: #3e8e41;
+}
+
+.init_button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #44c767;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    border-radius:28px;
+}
+
+.init_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.init_button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.init_button:hover span {
+    padding-right: 25px;
+}
+
+.init_button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.custom_button {
+    background-color:#44c767;
+    border-radius:28px;
+    border:1px solid #18ab29;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    padding:3px 19px;
+    text-decoration:none;
+    white-space: pre;
+}
+.custom_button:hover {
+    background-color:#5cbf2a;
+}
+.custom_button:active {
+    position:relative;
+    top:1px;
+}

@@ -10,12 +10,14 @@
 			<div id="main">
    				<div id="left">
    					<div id="left_top">
+						<div class="btn-group">
 							<form action="https://serene-scrubland-38823.herokuapp.com/">
-								<button type="submit">Quit game</button>
+								<button class="button" type="submit">Quit game</button>
 							 </form>
 							 <form action="https://serene-scrubland-38823.herokuapp.com/instruction">
-								<button type="submit">Instruction</button>
+								<button class="button" type="submit">Instruction</button>
 							 </form>
+						</div>
    					</div>
    					<div id="left_middle">
    						<div id="cards"><span id="card"><img src="picture/puker/0.jpg"/></span></div>
@@ -38,7 +40,7 @@
 	  				</div>
 					<div id="right_bottom">
 		 				<div id="choose">
-							<a href="#" onClick="start()">Start </a>
+							<a class="init_button" style="vertical-align:middle" href="#" onClick="start()"><span>Start </span></a>
 							<img onClick='note(1)' class='question' src='picture/desk/question.png'/>
 		 				</div>
 		 				<div id="box">

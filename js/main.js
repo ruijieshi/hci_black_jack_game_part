@@ -330,13 +330,13 @@ $("#message").text("Sorry, you do not have enough moeny！");
 $("#choose").text("Game over！");
 window.setTimeout(function(){$('.show,#center_message,#right_top,#choose,#cards').fadeOut(1200,function(){location.reload()})},5000);//游戏结束后，先淡出再刷新
 }
-else//Single game is over
+else
 {
 $("#message").text("Game Over，Click\"Continue\"to start a new game");
 $("#choose").html("<a href='#' id='reset' class='custom_button'>Continue </a><img onClick='note(10)' class='question' src='picture/desk/question.png'/>").hide().fadeIn(500);
 $("#reset").click(bet);
 }
-});//Shows the result info
+});
 }
 
 

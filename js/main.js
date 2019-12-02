@@ -324,7 +324,7 @@ get_sore=0;
 y_sore+=get_sore;
 $("#center_message").html(message).hide().fadeIn(500,function(){;
 $("#sore").text("Moeny："+y_sore);
-if(y_sore<10)//Check if game is over
+if(y_sore<10)
 {
 $("#message").text("Sorry, you do not have enough moeny！");
 $("#choose").text("Game over！");
